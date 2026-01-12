@@ -47,13 +47,5 @@ T.Button {
     }
 
     background: Private.ButtonBackground 
-    {
-
-        Rectangle
-        {
-            color: "yellow"
-            height: 5
-            width: 5
-        }
-    }
+    {}
 }
