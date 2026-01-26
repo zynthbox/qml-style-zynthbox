@@ -8,6 +8,7 @@ import QtQuick 2.6
 import QtQuick.Templates @QQC2_VERSION@ as T
 import org.kde.plasma.core 2.0 as PlasmaCore
 import "private" as Private
+import org.kde.kirigami 2.6 as Kirigami
 
 T.Dial {
     id: control
@@ -37,7 +38,7 @@ T.Dial {
             ctx.globalAlpha = 1;
 
             ctx.beginPath();
-            ctx.strokeStyle = control.PlasmaCore.ColorScope.highlightColor;
+            ctx.strokeStyle = control.Kirigami.Theme.textColor;
             ctx.lineWidth=5;
             ctx.arc(centreX, centreY, width/2.4, 0.7*Math.PI, 1.6*Math.PI * control.position - 1.25*Math.PI, false);
             ctx.stroke();
