@@ -51,7 +51,7 @@ property bool showIndicator : false
     PlasmaCore.ColorScope.colorGroup: flat && parent ? parent.PlasmaCore.ColorScope.colorGroup : PlasmaCore.Theme.ButtonColorGroup
 
     contentItem: Loader {
-            sourceComponent: control.display == T.Button.TextUnderIcon ? _vLayout : _hLayout
+        sourceComponent: control.display == T.Button.TextUnderIcon ? _vLayout : _hLayout
     }
 
     indicator: Kirigami.Icon {
@@ -78,11 +78,12 @@ property bool showIndicator : false
 
         Item {
             implicitWidth: _layout.implicitWidth
+            implicitHeight: Kirigami.Units.gridUnit 
             opacity: enabled ? 1 : 0.5
 
             RowLayout {
                 id: _layout
-                width:control.display !== T.Button.TextUnderIcon && icon.visible ? Math.min(parent.width, implicitWidth) : parent.width
+                width: control.display !== T.Button.TextUnderIcon && icon.visible ? Math.min(parent.width, implicitWidth) : parent.width
                 height: parent.height
                 spacing:2
                 anchors.centerIn: parent
