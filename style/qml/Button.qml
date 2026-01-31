@@ -37,9 +37,9 @@ T.Button {
     Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.SecondaryControl
     Kirigami.MnemonicData.label: control.text
 
-
-property color color : control.pressed || control.checked ?  Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
-property bool showIndicator : false
+    readonly property color defaultColor : control.pressed || control.checked ?  Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
+    property color color : defaultColor
+    property bool showIndicator : false
     Shortcut {
         //in case of explicit & the button manages it by itself
         enabled: !(RegExp(/\&[^\&]/).test(control.text))
@@ -104,7 +104,7 @@ property bool showIndicator : false
                     visible: text.length > 0 && control.display !== T.Button.IconOnly
                     text: control.text
                     font: control.font
-                    color: control.color
+                    color: ZUI.Theme.ghostButton ? control.color : control.defaultColor
                     horizontalAlignment: control.display !== T.Button.TextUnderIcon && icon.visible ? Text.AlignLeft : Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     elide: Text.ElideRight
