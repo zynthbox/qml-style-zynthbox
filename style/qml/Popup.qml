@@ -49,5 +49,6 @@ T.Popup {
     background: PlasmaCore.FrameSvgItem {
         implicitWidth: PlasmaCore.Units.gridUnit * 12
         imagePath: "widgets/dialog-background"
+        colorGroup: PlasmaCore.Theme.ViewColorGroup
     }
 }
