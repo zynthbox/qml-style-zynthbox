@@ -39,7 +39,7 @@ T.Button {
 
     readonly property color defaultColor : control.pressed || control.checked ?  Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
     property color color :  ZUI.Theme.ghostButton ? control.ghostColor : control.defaultColor
-    readonly property color ghostColor : control.pressed || control.checked || control.highlighted?  Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+    readonly property color ghostColor : control.checked || control.highlighted?  Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
     property bool showIndicator : false
     Shortcut {
         //in case of explicit & the button manages it by itself
