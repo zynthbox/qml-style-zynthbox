@@ -18,7 +18,8 @@ T.Dial {
     implicitHeight: implicitWidth
     hoverEnabled: true
     onPositionChanged: canvas.requestPaint()
-
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.Button
     background:Canvas {
         id: canvas
         width: control.availableWidth
@@ -30,27 +31,22 @@ T.Dial {
             var centreX = width / 2;
             var centreY = height / 2;
 
-            ctx.globalAlpha = 0.3;
+            ctx.globalAlpha = 1;
             ctx.beginPath();
-            ctx.strokeStyle = control.Kirigami.Theme.textColor;
+            ctx.strokeStyle = control.Kirigami.Theme.backgroundColor;
             ctx.lineWidth=5;
             ctx.arc(centreX, centreY, width/2.4, 0, 2*Math.PI, false);
             ctx.stroke();
-            ctx.globalAlpha = 1;
+            ctx.globalAlpha = 0.3;
 
             ctx.beginPath();
-            ctx.strokeStyle = ZUI.Theme.monoColorHandles ? control.Kirigami.Theme.textColor : control.Kirigami.Theme.highlightColor;
+            ctx.strokeStyle = control.Kirigami.Theme.textColor
             ctx.lineWidth=5;
             ctx.arc(centreX, centreY, width/2.4, 0.7*Math.PI, 1.6*Math.PI * control.position - 1.25*Math.PI, false);
             ctx.stroke();
         }
     }
 
-    PlasmaCore.Svg {
-        id: grooveSvg
-        imagePath: "widgets/slider"
-        colorGroup: PlasmaCore.ColorScope.colorGroup
-    }
     handle: Item {
         x: (control.width/2) + Math.cos((-(control.angle-90)*Math.PI)/180) * (control.width/2-width/2) - width/2
         y: (control.height/2) + Math.sin(((control.angle-90)*Math.PI)/180) * (control.height/2-height/2) - height/2
