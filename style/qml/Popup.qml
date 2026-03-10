@@ -19,10 +19,10 @@ T.Popup {
     contentWidth: contentItem.implicitWidth || (contentChildren.length === 1 ? contentChildren[0].implicitWidth : 0)
     contentHeight: contentItem.implicitHeight || (contentChildren.length === 1 ? contentChildren[0].implicitHeight : 0)
 
-    leftPadding: background.margins.left
-    topPadding: background.margins.top
-    rightPadding: background.margins.right
-    bottomPadding: background.margins.bottom
+    leftPadding: background ? background.margins.left : 0
+    topPadding: background ? background.margins.top : 0
+    rightPadding: background ? background.margins.right : 0
+    bottomPadding: background ? background.margins.bottom : 0
 
     enter: Transition {
         NumberAnimation {
