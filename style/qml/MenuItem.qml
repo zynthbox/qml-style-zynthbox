@@ -102,6 +102,7 @@ T.MenuItem {
 
     background: Item {
         implicitWidth: PlasmaCore.Units.gridUnit * 8
+        implicitHeight: Kirigami.Units.gridUnit * 2
 
         PlasmaCore.FrameSvgItem {
             id: highlight
