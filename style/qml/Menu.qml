@@ -87,7 +87,7 @@ T.Menu {
     }
 
     background: PlasmaCore.FrameSvgItem {
-        imagePath: "widgets/background"
+        imagePath: "widgets/dialog-background"
         implicitWidth: PlasmaCore.Units.gridUnit * 8
         implicitHeight: PlasmaCore.Units.gridUnit * 2
     }
